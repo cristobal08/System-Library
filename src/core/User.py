@@ -18,3 +18,25 @@ class User:
         print("======= Return Book =======")
         return_book = input("What's book's ISBN or Title:_ ")
         print(f"Book {return_book} is returned")
+
+class Studen(User):
+    def __init__(self, type, major, semester):
+        self.type = type
+        self.major = major
+        self.semester = semester
+
+    def limit_book(self):
+        print("-------  search number of books allowed ---------")
+
+    print("User Type:")
+
+class Teacher(User):
+    def __init__(self, department, specialty):
+        self.department = department
+        self.specialty = specialty
+
+    def extend_rent(self):
+        print("-------  extended loan duration ---------")
+
+
+
