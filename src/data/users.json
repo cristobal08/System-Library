@@ -1,0 +1,41 @@
+{
+    "user_teacher": [
+        {
+            "_id": "606cfdaf-e762-4d2e-bae5-cfc44671cbbf",
+            "user_name": "jesus",
+            "user_last_name": "avila",
+            "address": "here",
+            "age": 32,
+            "user_type": "Teacher",
+            "department": "computer science",
+            "specialty": "Bioinformatic"
+        }
+    ],
+    "user_student": [],
+    "user_general": [
+        {
+            "_id": "cc1a0c00-4907-4a5f-ad10-44cd02a08b9c",
+            "user_type": "1",
+            "user_name": "1",
+            "user_last_name": "",
+            "address": "1",
+            "age": 1,
+            "major": "1",
+            "semester": 1,
+            "department": "1",
+            "specialty": "1"
+        },
+        {
+            "_id": "6ac905c2-afee-47b4-b55a-1b7ab671b818",
+            "user_type": "5",
+            "user_name": "5",
+            "user_last_name": "5",
+            "address": "5",
+            "age": 5,
+            "major": "5",
+            "semester": 5,
+            "department": "5",
+            "specialty": "5"
+        }
+    ]
+}
