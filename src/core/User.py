@@ -40,6 +40,23 @@ class User:
             retrieved_user.delete()
         else:
             print("user Not found in system")
+    
+    def update_user(self):
+        
+        print("\n Update information User \n")
+
+        self.upt_user = input("User's name to be updated:  ")
+        retrieved_user =  UserRecord.get(UserRecord.user_name == self.upt_user)
+
+        if retrieved_user:
+            print("User found")
+            self.new_name = input("Update the users name: ")
+            retrieved_user.user_name = self.new_name
+            retrieved_user.save()
+        else:
+            print("user Not found in system")
+
+
             
 
 
