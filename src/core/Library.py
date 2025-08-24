@@ -17,10 +17,8 @@ class Library:
 
             match option_registry:
                 case 1:
-                    print(" new user")
                     self.user.create_user()
-                case 2:
-                    print(" user removed ")
+                case 2:                    
                     self.user.remove_user()
                 case 3:
                     print(" updated user")

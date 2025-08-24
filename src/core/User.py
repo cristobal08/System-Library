@@ -27,6 +27,21 @@ class User:
                         semester = self.semester,
                         department = self.department,
                         specialty = self.specialty)
+        
+    def remove_user(self):
+
+        print(" \n Removing user from system \n")
+
+        self.rm_user = input("User's name to be removed:  ")
+        retrieved_user =  UserRecord.get(UserRecord.user_name == self.rm_user)
+        
+        if retrieved_user:
+            print("User found, Deleting info! ")
+            retrieved_user.delete()
+        else:
+            print("user Not found in system")
+            
+
 
         
 
