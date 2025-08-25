@@ -1,39 +1,63 @@
-from utils.Db import UserRecord
+from utils.Db import UserStudent, UserTeacher
 
 
 class User:
-    # def __init__(self):
-    #     self.save_user = UserInfo()
-    
-    def create_user(self):
-        
-        print("\n Fill the information , write N/A if perfil dont apply \n")
-        self.user_type = input("Type on user \"Student or Teacher\" ")
-        self.user_name = input("user name: ")
-        self.user_last_name = input("user last name: ")
-        self.address = input ("user address: ")
-        self.age = int(input("age: "))
-        self.major = input("what's the major?: ")
-        self.semester = int(input("current semester?: "))
-        self.department = input("department: ")
-        self.specialty = input("specialty: ")
 
-        UserRecord.create(user_type = self.user_type, 
-                        user_name = self.user_name,
-                        user_last_name = self.user_last_name,
-                        address = self.address,
-                        age = self.age,
-                        major = self.major,
-                        semester = self.semester,
-                        department = self.department,
-                        specialty = self.specialty)
+    def __init__(self, user_type=None, user_name=None, user_last_name=None, 
+                address=None, age=None, major=None, semester=None, 
+                department=None, specialty=None):
         
+        self.user_type = user_type
+        self.user_name = user_name
+        self.user_last_name = user_last_name
+        self.address = address
+        self.age = age
+        self.major = major
+        self.semester = semester
+        self.department = department
+        self.specialty = specialty
+
+    def create_user(self):
+
+        user_info = {}
+
+        user_info["user_type"] = input("Type on user \"Student or Teacher\" ")
+        user_info["user_name"] = input("user name: ")
+        user_info["user_last_name"] = input("user last name: ")
+        user_info["address"] = input ("user address: ")
+        user_info["age"] = int(input("age: "))
+        if user_info["user_type"] == "student":
+            user_info["major"] = input("what's the major?: ")
+            user_info["semester"] = int(input("current semester?: "))
+        elif user_info["user_type"] == "teacher":
+            user_info["department"] = input("department: ")
+            user_info["specialty"] = input("specialty: ")
+
+        return user_info
+
+    def save_info_user(self,data):
+
+        if data["user_type"] == "student":
+            UserStudent.create(user_type = data["user_type"], 
+                        user_name = data["user_name"],
+                        user_last_name = data["user_last_name"],
+                        address = data["address"],
+                        age = data["age"],
+                        major = data["major"],
+                        semester = data["semester"])
+        elif data["user_type"] == "teacher":
+            UserTeacher.create(user_type = data["user_type"], 
+                        user_name = data["user_name"],
+                        user_last_name = data["user_last_name"],
+                        address = data["address"],
+                        age = data["age"],
+                        department = data["department"],
+                        specialty = data["specialty"])
+
     def remove_user(self):
 
-        print(" \n Removing user from system \n")
-
         self.rm_user = input("User's name to be removed:  ")
-        retrieved_user =  UserRecord.get(UserRecord.user_name == self.rm_user)
+        retrieved_user = self.find_user(self.rm_user)
         
         if retrieved_user:
             print("User found, Deleting info! ")
@@ -42,11 +66,9 @@ class User:
             print("user Not found in system")
     
     def update_user(self):
-        
-        print("\n Update information User \n")
 
         self.upt_user = input("User's name to be updated:  ")
-        retrieved_user =  UserRecord.get(UserRecord.user_name == self.upt_user)
+        retrieved_user = self.find_user(self.upt_user)
 
         if retrieved_user:
             print("User found")
@@ -55,6 +77,14 @@ class User:
             retrieved_user.save()
         else:
             print("user Not found in system")
+    
+    def find_user(self, name):
+
+        try:
+            return UserTeacher.get(UserTeacher.user_name == name)
+        except:
+            return None
+
 
 
             
