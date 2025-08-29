@@ -2,9 +2,9 @@ from lightdb import LightDB
 from lightdb.models import Model
 
 # Initialize the database
-db_user = LightDB("src/data/users.json")
+db_library = LightDB("src/data/library.json")
 
-class UserStudent(Model, table="UserInfo"):
+class UserStudent(Model, table="UserInfo", database=db_library):
     user_type: str
     user_name: str
     user_last_name: str
@@ -13,7 +13,7 @@ class UserStudent(Model, table="UserInfo"):
     major: str  
     semester: int
 
-class UserTeacher(Model, table="UserInfo"):
+class UserTeacher(Model, table="UserInfo", database=db_library):
     user_type: str
     user_name: str
     user_last_name: str
@@ -21,3 +21,10 @@ class UserTeacher(Model, table="UserInfo"):
     age: int
     department: str
     specialty: str
+
+class BookInfo(Model, table="BookInfo", database=db_library):
+    isbn: str
+    title: str
+    autor: str
+    available_copies: int
+    state: str

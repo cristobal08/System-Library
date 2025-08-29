@@ -1,4 +1,4 @@
-from utils.Db import UserStudent, UserTeacher
+from utils.DbLibrary import UserStudent, UserTeacher
 
 
 class User:
@@ -38,7 +38,8 @@ class User:
     def save_info_user(self,data):
         
         if data["user_type"] == "student":
-            # operator ** unpacks the key-value pairs of dictionary e.g {'user_type': 'Student','user_name': 'Juan','age': 20}
+            # operator ** unpacks the key-value pairs of dictionary e.g 
+            # {'user_type': 'Student','user_name': 'Juan','age': 20}
             UserStudent.create(**data) 
         elif data["user_type"] == "teacher":
             UserTeacher.create(**data)
