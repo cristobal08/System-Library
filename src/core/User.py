@@ -36,23 +36,12 @@ class User:
         return user_info
 
     def save_info_user(self,data):
-
+        
         if data["user_type"] == "student":
-            UserStudent.create(user_type = data["user_type"], 
-                        user_name = data["user_name"],
-                        user_last_name = data["user_last_name"],
-                        address = data["address"],
-                        age = data["age"],
-                        major = data["major"],
-                        semester = data["semester"])
+            # operator ** unpacks the key-value pairs of dictionary e.g {'user_type': 'Student','user_name': 'Juan','age': 20}
+            UserStudent.create(**data) 
         elif data["user_type"] == "teacher":
-            UserTeacher.create(user_type = data["user_type"], 
-                        user_name = data["user_name"],
-                        user_last_name = data["user_last_name"],
-                        address = data["address"],
-                        age = data["age"],
-                        department = data["department"],
-                        specialty = data["specialty"])
+            UserTeacher.create(**data)
 
     def remove_user(self):
 
