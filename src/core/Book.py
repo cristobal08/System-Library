@@ -21,6 +21,22 @@ class Book:
     
     def save_book(self,book_data):
         BookInfo.create(**book_data)
+    
+    def remove_book(self,book_title):
+        rm_book = self.find_book(book_title)
+
+        if rm_book:
+            print(f"Deleting book:  {rm_book.title}")
+            rm_book.delete()
+        else:
+            print("Book Not found in system")
+    
+    def find_book(self, book_title):
+        try:
+            return BookInfo.get(BookInfo.title == book_title)
+        except:
+            return None
+
 
     def show_book_info(self):
         print("======= Book Information ======")
