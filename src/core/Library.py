@@ -34,7 +34,7 @@ class Library:
                         self.user.remove_user()
                     case 3:
                         print("\n Update information User \n")
-                        self.user.update_user()
+                        self.user.update_user_info()
                     case 4:
                         print("Please, type the book information")
                         book_data = self.book.add_book()

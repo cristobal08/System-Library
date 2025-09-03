@@ -2,7 +2,7 @@ from utils.DbLibrary import UserStudent, UserTeacher
 
 
 class User:
-
+    
     def __init__(self, user_type=None, user_name=None, user_last_name=None, 
                 address=None, age=None, major=None, semester=None, 
                 department=None, specialty=None):
@@ -55,21 +55,94 @@ class User:
         else:
             print("user Not found in system")
     
-    def update_user(self):
+    def update_user_info(self):
+        
+        teachers = UserTeacher.all()
+        students = UserStudent.all()
+        users = teachers + students
 
-        self.upt_user = input("User's name to be updated:  ")
-        retrieved_user = self.find_user(self.upt_user)
+        if not users:
+            print(" No users in database!")
+            return
 
-        if retrieved_user:
-            print("User found")
-            self.new_name = input("Update the users name: ")
-            retrieved_user.user_name = self.new_name
-            retrieved_user.save()
-        else:
-            print("user Not found in system")
-    
+        print(f"\n All users ({len(users)} total):")
+        print("-" * 50)
+        for i, user in enumerate(users, 1):
+            print(f"{i:2d}. Name: {user.user_name}")
+            print(f"     Adress: {user.address} | Type: {user.user_type} ")
+        print("-" * 50)
+
+        try:
+            choice = int(input("Select user number to update (0 to cancel): "))
+            if 1 <= choice <= len(users):
+                selected_user = users[choice - 1]
+                self.interactive_update(selected_user)
+            elif choice == 0:
+                print(" Update cancelled")
+            else:
+                print(" Invalid selection!")
+        except ValueError:
+            print(" Please enter a valid number!")
+
+    def interactive_update(self, user):
+        print("\n Enter new values (press ENTER to keep current):")
+        print(f"INFO: {user}")
+        if user.user_type == "student":
+            new_name = input(f"Name [{user.user_name}]: ").strip()
+            if new_name:
+                user.user_name = new_name
+            
+            new_last_name = input(f"last name [{user.user_last_name}]: ").strip()
+            if new_last_name:
+                user.user_last_name = new_last_name
+            
+            new_address = input(f"address [{user.address}]: ").strip()
+            if new_address:
+                user.address = new_address
+            
+            new_age = input(f"age [{user.age}]: ").strip()
+            if new_age:
+                new_age = int(new_age)
+                user.age = new_age
+            
+            new_semester = input(f"semester [{user.semester}]: ").strip()
+            if new_semester:
+                new_semester = int(new_semester)
+                user.semester = new_semester
+        elif user.user_type == "teacher":
+            new_name = input(f"Name [{user.user_name}]: ").strip()
+            if new_name:
+                user.user_name = new_name
+            
+            new_last_name = input(f"last name [{user.user_last_name}]: ").strip()
+            if new_last_name:
+                user.user_last_name = new_last_name
+            
+            new_address = input(f"address [{user.address}]: ").strip()
+            if new_address:
+                user.address = new_address
+            
+            new_age = input(f"age [{user.age}]: ").strip()
+            if new_age:
+                new_age = int(new_age)
+                user.age = new_age
+            
+            new_department = input(f"department [{user.department}]: ").strip()
+            if new_department:
+                user.department = new_department
+            
+            new_specialty = input(f"specialty [{user.specialty}]: ").strip()
+            if new_specialty:
+                user.specialty = new_specialty
+
+        try:
+            user.save()
+            print("\n User updated successfully!")
+        except Exception as e:
+            print(f"Error saving changes: {e}")
+                
+
     def find_user(self, name):
-
         try:
             return UserTeacher.get(UserTeacher.user_name == name)
         except:

@@ -124,8 +124,6 @@ class Book:
         except Exception as e:
             print(f"Error saving changes: {e}")
 
-
-
     def show_book_info(self):
         print("======= Book Information ======")
         print(f"Title: {self.title}")
