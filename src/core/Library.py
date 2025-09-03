@@ -42,13 +42,14 @@ class Library:
                     case 5:
                         book_title = input("Book title to be removed: ")
                         self.book.remove_book(book_title)
+                    case 6:
+                        self.book.update_book_info()
 
                     case 8:
-                        print("Goodbye!")
+                        print("Closing System!")
                         break 
                     case _:
                         print("Invalid option!")
-                
                 
                 input("\nPress ENTER to continue...")
             except ValueError:
