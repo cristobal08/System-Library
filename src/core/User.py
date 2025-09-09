@@ -86,51 +86,33 @@ class User:
 
     def interactive_update(self, user):
         print("\n Enter new values (press ENTER to keep current):")
-        print(f"INFO: {user}")
+        
+        new_name = input(f"Name [{user.user_name}]: ").strip()
+        if new_name:
+            user.user_name = new_name
+        
+        new_last_name = input(f"last name [{user.user_last_name}]: ").strip()
+        if new_last_name:
+            user.user_last_name = new_last_name
+        
+        new_address = input(f"address [{user.address}]: ").strip()
+        if new_address:
+            user.address = new_address
+        
+        new_age = input(f"age [{user.age}]: ").strip()
+        if new_age:
+            new_age = int(new_age)
+            user.age = new_age
+        
         if user.user_type == "student":
-            new_name = input(f"Name [{user.user_name}]: ").strip()
-            if new_name:
-                user.user_name = new_name
-            
-            new_last_name = input(f"last name [{user.user_last_name}]: ").strip()
-            if new_last_name:
-                user.user_last_name = new_last_name
-            
-            new_address = input(f"address [{user.address}]: ").strip()
-            if new_address:
-                user.address = new_address
-            
-            new_age = input(f"age [{user.age}]: ").strip()
-            if new_age:
-                new_age = int(new_age)
-                user.age = new_age
-            
             new_semester = input(f"semester [{user.semester}]: ").strip()
             if new_semester:
                 new_semester = int(new_semester)
                 user.semester = new_semester
         elif user.user_type == "teacher":
-            new_name = input(f"Name [{user.user_name}]: ").strip()
-            if new_name:
-                user.user_name = new_name
-            
-            new_last_name = input(f"last name [{user.user_last_name}]: ").strip()
-            if new_last_name:
-                user.user_last_name = new_last_name
-            
-            new_address = input(f"address [{user.address}]: ").strip()
-            if new_address:
-                user.address = new_address
-            
-            new_age = input(f"age [{user.age}]: ").strip()
-            if new_age:
-                new_age = int(new_age)
-                user.age = new_age
-            
             new_department = input(f"department [{user.department}]: ").strip()
             if new_department:
                 user.department = new_department
-            
             new_specialty = input(f"specialty [{user.specialty}]: ").strip()
             if new_specialty:
                 user.specialty = new_specialty
