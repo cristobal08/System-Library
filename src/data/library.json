@@ -1,0 +1,138 @@
+{
+    "UserInfo": [
+        {
+            "_id": "0324f2ec-07af-4a45-a3eb-0ee5d21106c9",
+            "user_type": "student",
+            "user_name": "wq",
+            "user_last_name": "qw",
+            "address": "qw",
+            "age": 344,
+            "department": "qw",
+            "specialty": "qw"
+        },
+        {
+            "_id": "50658e8b-31aa-4cf8-bbf9-63b9e39d2f3c",
+            "user_type": "teacher",
+            "user_name": "me",
+            "user_last_name": "me",
+            "address": "me",
+            "age": 22,
+            "department": "12",
+            "specialty": "121dsd"
+        },
+        {
+            "_id": "236bc9e4-ac23-4257-9437-867c22c25db9",
+            "user_type": "student",
+            "user_name": "updated",
+            "user_last_name": "a",
+            "address": "a",
+            "age": 22,
+            "department": "12",
+            "specialty": "121dsd"
+        },
+        {
+            "_id": "ac54fdf3-35bf-4ccf-972b-d2fc5166b0d3",
+            "user_type": "teacher",
+            "user_name": "w",
+            "user_last_name": "w",
+            "address": "w",
+            "age": 2,
+            "department": "w",
+            "specialty": "w"
+        },
+        {
+            "_id": "7c3ec349-69c3-4b24-9f5c-166af215feb8",
+            "user_type": "student",
+            "user_name": "sa",
+            "user_last_name": "sa",
+            "address": "as",
+            "age": 12,
+            "major": "as",
+            "semester": 12
+        },
+        {
+            "_id": "a4c9d2fd-4acc-43b1-9ee1-16889716e05a",
+            "user_type": "teacher",
+            "user_name": "bbbb\tb",
+            "user_last_name": "bbbb",
+            "address": "bbb",
+            "age": 898998,
+            "department": "bbb",
+            "specialty": "bbb"
+        },
+        {
+            "_id": "cfea8ff7-5646-4873-9259-c9449f46e8f1",
+            "user_type": "student",
+            "user_name": "sasassa",
+            "user_last_name": "sa",
+            "address": "sa",
+            "age": 33443,
+            "major": "43",
+            "semester": 443
+        },
+        {
+            "_id": "0519d3fc-3954-42ab-a59e-9a436e739342",
+            "user_type": "student",
+            "user_name": "asas",
+            "user_last_name": "assa",
+            "address": "as",
+            "age": 322332,
+            "major": "sddsdsds",
+            "semester": 456543234
+        },
+        {
+            "_id": "2056d749-c043-4c1a-8d68-1ac9b33b6b71",
+            "user_type": "teacher",
+            "user_name": "2121",
+            "user_last_name": "2",
+            "address": "21",
+            "age": 21,
+            "department": "21",
+            "specialty": "21"
+        }
+    ],
+    "BookInfo": [
+        {
+            "_id": "42386243-fc56-42b2-a154-cfa6954aec0e",
+            "isbn": "32233",
+            "title": "polimarch",
+            "autor": "polimarch",
+            "available_copies": 45344,
+            "state": "good"
+        }
+    ],
+    "StudentInfo": [
+        {
+            "_id": "c9499ab1-5b60-4e55-bf17-7b23f2b0df45",
+            "user_type": "student",
+            "user_name": "mike",
+            "user_last_name": "turtle",
+            "address": "nyc",
+            "age": 16,
+            "major": "assaa",
+            "semester": 23
+        }
+    ],
+    "TeacherInfo": [
+        {
+            "_id": "27a35163-8aa9-4055-9401-00d7bf8b5b06",
+            "user_type": "teacher",
+            "user_name": "splinter",
+            "user_last_name": "rat",
+            "address": "NYC cp",
+            "age": 43,
+            "department": "art martials",
+            "specialty": "ninjutsu"
+        },
+        {
+            "_id": "e66273e7-3a59-4d7f-a7bf-d865309960a9",
+            "user_type": "teacher",
+            "user_name": "rapha",
+            "user_last_name": "turtle",
+            "address": "NYC",
+            "age": 16,
+            "department": "ny",
+            "specialty": "ninjutsu"
+        }
+    ]
+}
